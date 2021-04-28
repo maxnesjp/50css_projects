@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  /* if we add a border or padding to an element, it wont affect the width of the element  */
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #efedd6;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  /* get rid of horizontal scrolling */
+  overflow-x: hidden;
+}
+
+h1 {
+  margin: 10px;
+}
+
+.box {
+  background-color: steelblue;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  height: 200px;
+  margin: 10px;
+  border-radius: 10px;
+  /* 4px - offset, 5px - blur, rgba - color */
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
+  /* 0 is default, 100px - move right by 100px*/
+  transform: translateX(400%);
+  transition: transform 0.4s ease;
+}
+
+.box:nth-of-type(even) {
+  /* even boxes - every other one */
+  transform: translateX(-400%);
+}
+
+.box.show {
+  /* move to the default position (center of the screen) */
+  transform: translateX(0);
+}
+
+.box h2 {
+  font-size: 45px;
+}
